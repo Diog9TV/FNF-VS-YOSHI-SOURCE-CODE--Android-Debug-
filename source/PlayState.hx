@@ -53,13 +53,11 @@ import lime.utils.Assets;
 import openfl.display.BlendMode;
 import openfl.display.StageQuality;
 import openfl.filters.ShaderFilter;
+import Sys;
+import sys.FileSystem;
 
 #if windows
 import Discord.DiscordClient;
-#end
-#if windows
-import Sys;
-import sys.FileSystem;
 #end
 
 using StringTools;
@@ -738,6 +736,11 @@ class PlayState extends MusicBeatState
 		if (loadRep)
 			replayTxt.cameras = [camHUD];
 
+		#if android
+		addAndroidControls();
+		androidc.visible = true;
+		#end
+			
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
 		// UI_camera.zoom = 1;
