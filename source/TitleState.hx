@@ -21,7 +21,7 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import io.newgrounds.NG;
-import lime.app.Application; // test
+import lime.app.Application;
 import openfl.Assets;
 
 #if windows
@@ -51,11 +51,11 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
-		#if polymod
+		/*#if polymod
 		polymod.Polymod.init({modRoot: "mods", dirs: ['introMod']});
-		#end
+		#end*/ //ISSO CRASHA ANDROID
 		
-		#if sys
+		#if desktop //isso tambem crasha, o desktop signfica que so vai ser usado no pc essas linhas
 		if (!sys.FileSystem.exists(Sys.getCwd() + "/assets/replays"))
 			sys.FileSystem.createDirectory(Sys.getCwd() + "/assets/replays");
 		#end
